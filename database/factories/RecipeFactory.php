@@ -21,7 +21,6 @@ class RecipeFactory extends Factory
             'name' => $this->faker->sentence,
             'publication_date' => $this->faker->date,
             'difficulty' => $this->faker->randomElement(['bajo', 'medio', 'alto']),
-            'category_id' => Category::factory(), // Crea una categoría relacionada
             'preparation_time' => $this->faker->numberBetween(10, 120),
             'ingredients' => $this->faker->sentence,
             'author' => $this->faker->name,
