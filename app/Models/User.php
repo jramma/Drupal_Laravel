@@ -10,6 +10,12 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+   /**
+     * El nombre de la tabla asociada con el modelo.
+     *
+     * @var string
+     */
+    protected $table = 'users_pec4';
 
     /**
      * The attributes that are mass assignable.

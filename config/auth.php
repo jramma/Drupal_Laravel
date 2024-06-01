@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'users_pec4',
         ],
     ],
 
@@ -65,9 +65,9 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
+        // 'users_pec4' => [
         //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'table' => 'users_pec4',
         // ],
     ],
 
