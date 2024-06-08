@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiRecipeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
@@ -19,7 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
 
 Route::get('/inicio', function () {
     // Aquí puedes retornar una vista o hacer lo que necesites
@@ -29,7 +29,8 @@ Route::get('/inicio', [HomeController::class, 'inicio'])->name('inicio');
 require __DIR__ . '/auth.php';
 
 Route::get('/recipes', 'RecipeController@index')->name('recipes.index');
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
 
-Route::get('/api/recipes/{page}', [RecipeController::class, 'index'])->name('api.recipes');
-Route::get('/api/recipe/{id}', [RecipeController::class, 'show'])->name('api.recipe');
+Route::get('/api/recipes/{page}', [ApiRecipeController::class, 'index'])->name('api.recipes');
+Route::get('/api/recipe/{id}', [ApiRecipeController::class, 'show'])->name('api.recipe');
 Route::get('/api/category/{id}/{page}', [CategoryController::class, 'show'])->name('api.category');

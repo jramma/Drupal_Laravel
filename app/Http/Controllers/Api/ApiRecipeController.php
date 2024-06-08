@@ -7,13 +7,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class ApiRecipeController extends Controller
 {
     public function index($page)
     {
         $recipes = Recipe::paginate(10, ['id', 'name', 'publication_date'], 'page', $page);
         return response()->json($recipes);
     }
+
 
     public function show($id)
     {

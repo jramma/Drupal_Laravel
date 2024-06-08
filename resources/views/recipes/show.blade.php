@@ -33,8 +33,8 @@
                 <span class="font-semibold">Publicado:</span> {{ \Carbon\Carbon::parse($recipe->publication_date)->format('d/m/Y') }}
             </p>
 
-            <a href="{{ route('recipes.index') }}"
-                class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600">
+            <a href="/inicio"
+                class="text-orange-500 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-600">
                 Volver a las recetas
             </a>
         </div>
