@@ -6,7 +6,7 @@
     </x-slot>
         <div class="container items-center justify-center flex flex-col py-20">
             <div>
-                <img class="w-full h-48 object-cover rounded-lg mb-4"  src="{{ asset('build/assets/img.jpg') }}"
+                <img class="w-full h-48 object-cover rounded-lg mb-4"  src="{{ $recipe->image_path}}"
                     alt="{{ $recipe->name }}">
             </div>
             <p class="text-gray-600 dark:text-yellow-400 mb-4">

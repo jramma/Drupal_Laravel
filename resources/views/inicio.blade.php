@@ -18,7 +18,7 @@
                             {{ $recipe->name }}
                         </h3>
                         <img class="w-full h-48 object-cover rounded-lg mb-4 group-hover:opacity-75 transition-opacity duration-500"
-                            src="{{ asset('build/assets/img.jpg') }}" alt="{{ $recipe->name }}">
+                            src="{{ ucfirst($recipe->image_path) }}" alt="{{ $recipe->name }}">
                     </a>
                     <div class="mb-4">
                         <p
