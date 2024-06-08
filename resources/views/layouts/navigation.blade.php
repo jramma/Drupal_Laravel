@@ -18,7 +18,22 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('inicio')" :active="request()->routeIs('inicio')">
-                        {{ __('5 recetas') }}
+                        {{ __('Home') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('api.recipes', ['page' => 1])" :active="request()->routeIs('inicio')">
+                        {{ __('API_recipes') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('api.recipe', ['id' => 1])" :active="request()->routeIs('inicio')">
+                        {{ __('API_recipe') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('api.category', ['id' => 1, 'page' => 1])" :active="request()->routeIs('inicio')">
+                        {{ __('API_category') }}
                     </x-nav-link>
                 </div>
             </div>

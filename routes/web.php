@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Api\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +27,9 @@ Route::get('/inicio', function () {
 })->name('inicio');
 Route::get('/inicio', [HomeController::class, 'inicio'])->name('inicio');
 require __DIR__ . '/auth.php';
+
+Route::get('/recipes', 'RecipeController@index')->name('recipes.index');
+
+Route::get('/api/recipes/{page}', [RecipeController::class, 'index'])->name('api.recipes');
+Route::get('/api/recipe/{id}', [RecipeController::class, 'show'])->name('api.recipe');
+Route::get('/api/category/{id}/{page}', [CategoryController::class, 'show'])->name('api.category');

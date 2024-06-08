@@ -6,8 +6,20 @@ use App\Models\Recipe;
 
 class RecipeController extends Controller
 {
-    public function show(Recipe $recipe)
+    public function index()
     {
-        return view('recipes.show', ['recipe' => $recipe]);
+        $recipes = Recipe::all();
+
+        return response()->json($recipes);
+    }
+    public function show($id)
+    {
+        $recipe = Recipe::find($id);
+
+        if ($recipe) {
+            return response()->json($recipe);
+        } else {
+            return response()->json(['error' => 'Recipe not found'], 404);
+        }
     }
 }
