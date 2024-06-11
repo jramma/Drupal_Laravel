@@ -22,7 +22,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/inicio', function () {
-    // Aquí puedes retornar una vista o hacer lo que necesites
     return view('inicio');
 })->name('inicio');
 Route::get('/inicio', [HomeController::class, 'inicio'])->name('inicio');
@@ -34,3 +33,4 @@ Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipe
 Route::get('/api/recipes/{page}', [ApiRecipeController::class, 'index'])->name('api.recipes');
 Route::get('/api/recipe/{id}', [ApiRecipeController::class, 'show'])->name('api.recipe');
 Route::get('/api/category/{id}/{page}', [CategoryController::class, 'show'])->name('api.category');
+
